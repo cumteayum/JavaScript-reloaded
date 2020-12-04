@@ -8,9 +8,6 @@
 //   character: "N",
 // };
 
-// Using the Object.create
-// let myObj = Object.create('Object')
-
 // Using constructor
 function createMyObject(name, type, number, character){
   this.name = name;
