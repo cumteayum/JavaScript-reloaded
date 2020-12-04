@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" name="age" id="age"> -->
+    <!-- <span>FACEBOOK</span> -->
+    <a href="google.com">LINK 1</a>
+    <a href="google.com">LINK 2</a>
+    <a href="google.com">LINK 3</a>
+    <a href="google.com">LINK 4</a>
+    <a href="google.com">LINK 5</a>
+    <a href="google.com">LINK 6</a>
+    <a href="google.com">LINK 7</a>
+    <a href="google.com">LINK 8</a>
+</body>
+</html>
+<script>
+
+    // var age = 5;
+
+    // while(age < 10) {
+    //     console.log("YOur age is less than 10");
+    //     age++;
+    // }
+    // document.write("You are now over 10");
+
+    // GET INPUT VALUE
+    // var age = document.getElementById("age");
+    // console.log(age.value);
+
+    // BREAK AND CONTINUE
+    // for(var i=0; i<10;i++){
+    //     if(i==5 || i==3){
+    //         continue //skips
+    //     }
+    //     console.log(i);
+    //     if(i==7){
+    //         break;
+    //     }
+    // }
+
+    // PRACtical fors
+    var links = document.getElementsByTagName("a");
+    for(var i = 0; i < links.length; i++){
+        links[i].className = `Link ${i}`
+    }
+</script>
