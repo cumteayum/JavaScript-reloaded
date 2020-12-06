@@ -1,32 +1,47 @@
 class Library{
-  constructor(bookList){
-    this.bookList = Array.from(bookList);
-    this.bookListLength = this.bookList.length;
+  constructor(name, bookList){
+    this.name = name;
+    this.bookList = bookList;
     this.issuedBooks = [];
-    this.users = [];
   }
 
-  getBookList() {
-    for(let book in bookList){
-      console.log(`${book}. ${bookList[book]}`);
+  issueBook(bookName){
+    this.issuedBooks.push(bookName);
+    let bookIndex = this.bookList.indexOf(bookName);
+    this.bookList.splice(bookIndex, 1);
+    console.log(`Book ${bookName} issued`);
+  }
+
+  returnBook(bookName){
+    let index = this.issuedBooks.indexOf(this.bookName);
+    this.issuedBooks.splice(index, 1);
+    this.bookList.push(bookName);
+    console.log(`Book ${bookName} returned`);
+  }
+
+  listBooks(){
+    for (let b in this.bookList) {
+      console.log(`${b}. ${this.bookList[b]}`);
     }
   }
 
-  issueBook(bookName, user){
-    let index = this.bookList.indexOf(bookName);
-    this.bookList.splice(index, 1);
-    this.issuedBooks.push(bookName);
-    this.users.push(user);
-    console.log(`Book ${bookName} issued !`);
+  calculateValue(){
+      let books = this.bookList;
+      let flag;
+      if(books.length > 3){
+        flag=true;
+      }else{
+        flag=false
+      }
+      return flag
   }
 
-  returnBook(bookName) {
-    let index = this.issuedBooks.indexOf(bookName);
-    this.issuedBooks.splice(index,1);
-    this.bookList.unshift(bookName);
-    console.log(`Book ${bookName} returned!`);
-  }
-};
+}
 
-let bookList = ["Book1", "book2", "book3", "C", "Ruby"];
-let lib = new Library(bookList);
+let lib = new Library("ishan", ["C", "Python", "Java", "ML"])
+lib.listBooks();
+lib.issueBook("C");
+lib.issueBook("Java");
+lib.returnBook("C");
+lib.listBooks();
+console.log(lib.calculateValue())
